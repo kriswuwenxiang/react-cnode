@@ -22,11 +22,15 @@ const config =  {
     rules: [
       {
         test: /\.jsx$/,
-        use: { loader: "babel-loader" }
+        loader: "babel-loader",
+        options: {
+          cacheDirectory: true,
+          plugins: "react-hot-loader/babel"
+        }
       },
       {
         test: /\.js$/,
-        use: { loader: "babel-loader" },
+        loader: "babel-loader",
         exclude: path.resolve(__dirname, "node_modules")
       },
     ]

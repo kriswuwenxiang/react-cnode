@@ -50,9 +50,7 @@ serverCompiler.watch({}, (err, stats) => {
   )
   const bundle = mfs.readFileSync(bundlePath, 'utf-8')
   const m = new Module()
-  console.log('1111111111111111111111111111111111111')
   m._compile(bundle, 'server-entry.js')
-  console.log('**********************************'+serverBundle)
   serverBundle = m.exports.default
   // const m = getModuleFromString(bundle, 'server-entry.js')
   // serverBundle = m.exports
